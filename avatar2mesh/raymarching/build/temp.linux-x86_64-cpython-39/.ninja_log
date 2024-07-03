@@ -1,0 +1,5 @@
+# ninja log v5
+0	34993	1685499111374001714	/home/study/桌面/nerf2mesh/raymarching/build/temp.linux-x86_64-cpython-39/home/study/桌面/nerf2mesh/raymarching/src/bindings.o	bd9d8844c7f304ba
+0	57917	1685499134296666500	/home/study/桌面/nerf2mesh/raymarching/build/temp.linux-x86_64-cpython-39/home/study/桌面/nerf2mesh/raymarching/src/raymarching.o	c9e70d7396f1df38
+23	27698	1690876125390709349	/share/home/gpu2002/xxl/InstantAvatar/raymarching/build/temp.linux-x86_64-cpython-39/share/home/gpu2002/xxl/InstantAvatar/raymarching/src/bindings.o	77dcac031591572e
+23	58084	1690876155793379652	/share/home/gpu2002/xxl/InstantAvatar/raymarching/build/temp.linux-x86_64-cpython-39/share/home/gpu2002/xxl/InstantAvatar/raymarching/src/raymarching.o	7e36324513a33bf3

@@ -1,0 +1,70 @@
+
+CommandNotFoundError: Your shell has not been properly configured to use 'conda activate'.
+To initialize your shell, run
+
+    $ conda init <SHELL_NAME>
+
+Currently supported shells are:
+  - bash
+  - fish
+  - tcsh
+  - xonsh
+  - zsh
+  - powershell
+
+See 'conda init --help' for more information and options.
+
+IMPORTANT: You may need to close and restart your shell after running 'conda init'.
+
+
+Global seed set to 42
+/share/home/gpu2002/miniconda3/envs/instantAvatar/lib/python3.9/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/share/home/gpu2002/miniconda3/envs/instantAvatar/lib/python3.9/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=VGG16_Weights.IMAGENET1K_V1`. You can also use `weights=VGG16_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+  0%|          | 0/60 [00:00<?, ?it/s]  0%|          | 0/60 [00:04<?, ?it/s]
+Error executing job with overrides: ['dataset=peoplesnapshot/male-3-casual', 'experiment=demo', 'deformer.opt.cano_pose=a_pose']
+Traceback (most recent call last):
+  File "/share/home/gpu2002/xxl/InstantAvatar/train_stage1_v2.py", line 152, in <module>
+    main()
+  File "/share/home/gpu2002/miniconda3/envs/instantAvatar/lib/python3.9/site-packages/hydra/main.py", line 48, in decorated_main
+    _run_hydra(
+  File "/share/home/gpu2002/miniconda3/envs/instantAvatar/lib/python3.9/site-packages/hydra/_internal/utils.py", line 377, in _run_hydra
+    run_and_report(
+  File "/share/home/gpu2002/miniconda3/envs/instantAvatar/lib/python3.9/site-packages/hydra/_internal/utils.py", line 214, in run_and_report
+    raise ex
+  File "/share/home/gpu2002/miniconda3/envs/instantAvatar/lib/python3.9/site-packages/hydra/_internal/utils.py", line 211, in run_and_report
+    return func()
+  File "/share/home/gpu2002/miniconda3/envs/instantAvatar/lib/python3.9/site-packages/hydra/_internal/utils.py", line 378, in <lambda>
+    lambda: hydra.run(
+  File "/share/home/gpu2002/miniconda3/envs/instantAvatar/lib/python3.9/site-packages/hydra/_internal/hydra.py", line 111, in run
+    _ = ret.return_value
+  File "/share/home/gpu2002/miniconda3/envs/instantAvatar/lib/python3.9/site-packages/hydra/core/utils.py", line 233, in return_value
+    raise self._return_value
+  File "/share/home/gpu2002/miniconda3/envs/instantAvatar/lib/python3.9/site-packages/hydra/core/utils.py", line 160, in run_job
+    ret.return_value = task_function(task_cfg)
+  File "/share/home/gpu2002/xxl/InstantAvatar/train_stage1_v2.py", line 105, in main
+    rgb, depth, alpha = model.render_image_fast(batch, (H, W), 1)  # 渲染像素的rgb和alpha值
+  File "/share/home/gpu2002/miniconda3/envs/instantAvatar/lib/python3.9/site-packages/torch/autograd/grad_mode.py", line 27, in decorate_context
+    return func(*args, **kwargs)
+  File "/share/home/gpu2002/xxl/InstantAvatar/instant_avatar/models/DNeRF.py", line 92, in render_image_fast
+    self.renderer.density_grid_test.initialize(self.deformer, self.net_coarse)
+  File "/share/home/gpu2002/miniconda3/envs/instantAvatar/lib/python3.9/site-packages/torch/autograd/grad_mode.py", line 27, in decorate_context
+    return func(*args, **kwargs)
+  File "/share/home/gpu2002/xxl/InstantAvatar/instant_avatar/models/structures/density_grid.py", line 63, in initialize
+    _, d = deformer(coords, net)
+  File "/share/home/gpu2002/xxl/InstantAvatar/instant_avatar/deformers/snarf_deformer.py", line 165, in __call__
+    return self.deform_test(pts, model)  # model为实际的完整网络
+  File "/share/home/gpu2002/miniconda3/envs/instantAvatar/lib/python3.9/site-packages/torch/autograd/grad_mode.py", line 27, in decorate_context
+    return func(*args, **kwargs)
+  File "/share/home/gpu2002/xxl/InstantAvatar/instant_avatar/deformers/snarf_deformer.py", line 130, in deform_test
+    pts_cano_all, valid = self.deform(pts.type(self.dtype), eval_mode=True)
+  File "/share/home/gpu2002/xxl/InstantAvatar/instant_avatar/deformers/snarf_deformer.py", line 118, in deform
+    pts_cano, others = self.deformer.forward(pts, cond=None, tfs=self.tfs, eval_mode=eval_mode)
+  File "/share/home/gpu2002/xxl/InstantAvatar/instant_avatar/deformers/fast_snarf/deformer_torch.py", line 46, in forward
+    xc_opt, others = self.search(xd, cond, tfs, eval_mode=True)
+  File "/share/home/gpu2002/xxl/InstantAvatar/instant_avatar/deformers/fast_snarf/deformer_torch.py", line 97, in search
+    result = self.broyden_cuda(xd, self.voxel_d, self.voxel_J, tfs)
+  File "/share/home/gpu2002/xxl/InstantAvatar/instant_avatar/deformers/fast_snarf/deformer_torch.py", line 105, in broyden_cuda
+    J_inv_init_IN = torch.zeros((b, n, n_init, 3, 3), device=xd_tgt.device, dtype=torch.float32)
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 7.31 GiB (GPU 0; 47.54 GiB total capacity; 3.78 GiB already allocated; 5.29 GiB free; 4.95 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF

@@ -1,0 +1,12 @@
+traing of stage1!
+Switch to /share/home/gpu2002/xxl/InstantAvatar/outputs/peoplesnapshot/demo/male-3-casual
+[train] Loading from /share/home/gpu2002/xxl/InstantAvatar/data/PeopleSnapshot/male-3-casual/poses/anim_nerf_train.npz
+[val] Loading from /share/home/gpu2002/xxl/InstantAvatar/data/PeopleSnapshot/male-3-casual/poses/anim_nerf_val.npz
+[test] Loading from /share/home/gpu2002/xxl/InstantAvatar/data/PeopleSnapshot/male-3-casual/poses/anim_nerf_test.npz
+[2023-09-09 20:46:34,461][torch.distributed.nn.jit.instantiator][INFO] - Created a temporary directory at /tmp/tmp6dc35mcf
+[2023-09-09 20:46:34,462][torch.distributed.nn.jit.instantiator][INFO] - Writing /tmp/tmp6dc35mcf/_remote_module_non_scriptable.py
+WARNING: You are using a SMPL model, with only 10 shape coefficients.
+Setting up [LPIPS] perceptual loss: trunk [vgg], v[0.1], spatial [off]
+Loading model from: /share/home/gpu2002/miniconda3/envs/instantAvatar/lib/python3.9/site-packages/lpips/weights/v0.1/vgg.pth
+[INFO] loaded cascade 0 mesh: (567920, 3), (1118428, 3)
+Resume from checkpoints/last.ckpt
